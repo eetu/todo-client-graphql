@@ -4,6 +4,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = require('./webpack.common.js');
 
+const open =
+  process.env.OPEN_BROWSER === 'true'
+    ? true
+    : [undefined, 'false'].includes(process.env.OPEN_BROWSER)
+    ? false
+    : process.env.OPEN_BROWSER;
+
+console.log('open', open);
 module.exports = merge(common, {
   mode: 'development',
   entry: {
@@ -18,9 +26,22 @@ module.exports = merge(common, {
     public: 'localhost:3000' /* Open by default to localhost:3000 */,
     historyApiFallback: true,
     stats: 'minimal',
+    open,
+    proxy: {
+      '/graphql': {
+        target: 'http://localhost:3001',
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   output: {
     pathinfo: false,
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   module: {
     rules: [
@@ -52,11 +73,11 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               sourceMap: true,
-              convertToAbsoluteUrls: true,
-              camelCase: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
+              localsConvention: 'camelCase',
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
             },
           },
           'postcss-loader',

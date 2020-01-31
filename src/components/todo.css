@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+  background-color: white;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.3);
+  cursor: pointer;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  right: -5rem;
+  width: 5rem;
+  height: 100%;
+}
+
+.container textarea {
+  border: 1px dashed #d0d0d0;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  resize: none;
+  padding: 0.5rem;
+  opacity: 1;
+}
+
+.close-icon {
+  display: flex;
+  background-color: white;
+  opacity: 0;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  right: -3rem;
+  top: 0.5rem;
+  box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.3);
+  cursor: pointer;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.container:hover .close-icon {
+  opacity: 1;
+}
+
+.close-icon:hover {
+  color: #dd00dd;
+}

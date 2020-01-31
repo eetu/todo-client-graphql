@@ -61,7 +61,7 @@ module.exports = {
     },
   },
   plugins: [
-    new EnvironmentPlugin(['MESSAGE']), // Add environment variables that are passed to React components here
+    new EnvironmentPlugin(['API_URL', 'MESSAGE']), // Add environment variables that are passed to React components here
     new ForkTsCheckerWebpackPlugin(),
     new CopyWebpackPlugin(['public']),
     new HtmlWebPackPlugin({

@@ -18,7 +18,7 @@
     "@typescript-eslint/explicit-function-return-type": ["error"],
     "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": true }],
     "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
-    "no-shadow": ["error"]
+    "no-shadow": ["error", { "allowExpressions": true }]
   },
   "settings": {
     "react": {
