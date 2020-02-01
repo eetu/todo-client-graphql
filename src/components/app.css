@@ -20,3 +20,14 @@
   height: 128px;
   background-size: contain;
 }
+
+.add-todo {
+  background-color: transparent;
+  border: none;
+  color: white;
+  transition: color 0.25s ease-in-out;
+}
+
+.add-todo:hover {
+  color: #dcffdc;
+}
