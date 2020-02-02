@@ -1,0 +1,8 @@
+{
+  "root": "dist/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "basic_auth": true,
+  "https_only": true
+}
