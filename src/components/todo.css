@@ -2,7 +2,7 @@
   position: relative;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.3);
+  box-shadow: 2px 2px 3px 1px rgba(160, 160, 160, 0.3);
   cursor: pointer;
   padding: 1rem;
 }
@@ -44,7 +44,7 @@
   position: absolute;
   right: -3rem;
   top: 0.5rem;
-  box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.3);
+  box-shadow: 2px 2px 3px 1px rgba(160, 160, 160, 0.3);
   cursor: pointer;
   transition: opacity 0.25s ease-in-out, color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }

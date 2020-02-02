@@ -23,7 +23,7 @@ const Todo: React.FunctionComponent<TodoProps> = (props: TodoProps) => {
 
   const [edit, setEdit] = React.useState<boolean>(false);
 
-  const [message, setMessage] = React.useState(todo.message);
+  const [message, setMessage] = React.useState(todo.message || '');
 
   React.useEffect(
     useDebounceCallback(() => {

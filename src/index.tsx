@@ -19,6 +19,14 @@ const cache = new InMemoryCache({
 const client = new ApolloClient({
   uri: process.env.API_URL,
   cache,
+  request: operation => {
+    const token = localStorage.getItem('token');
+    operation.setContext({
+      headers: {
+        ...(token && { authorization: `Bearer ${token}` }),
+      },
+    });
+  },
 });
 
 ReactDOM.render(
