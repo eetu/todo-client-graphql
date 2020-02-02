@@ -5,7 +5,6 @@ import { useWindowSize } from '@react-hook/window-size';
 import { gql } from 'apollo-boost';
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import Trianglify from 'trianglify';
 
 import styles from './app.css';
 import Todos from './todos';
@@ -139,13 +138,7 @@ const App: React.StatelessComponent = () => {
   const containerElement = React.useCallback(
     (node: HTMLDivElement) => {
       if (node !== null) {
-        const pattern = Trianglify({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-
-        const oldCanvas = node.getElementsByTagName('canvas')[0];
-        oldCanvas ? node.replaceChild(pattern.canvas(), oldCanvas) : node.appendChild(pattern.canvas());
+        // TODO changes goes here when window size changes
       }
     },
     [width, height],
