@@ -41,7 +41,11 @@ module.exports = merge(common, {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              sourceMap: false,
+              localsConvention: 'camelCase',
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
             },
           },
           'postcss-loader',
